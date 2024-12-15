@@ -1,74 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            color: #ffffff;
-            background-color: transparent;
-        }
+	<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        color: #ffffff;
+        background-color: transparent; /* Define o fundo como transparente */
+    }
 
-        html {
-            background-color: transparent;
-        }
+    html {
+        background-color: transparent; /* Garante que o fundo do HTML também seja transparente */
+    }
 
-        #loginForm {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            padding: 40px;
-            width: 100%;
-            max-width: 400px;
-            background-color: transparent;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            height: 55vh;
-        }
+    #formContainer {
+        display: none; /* Esconde o formulário inicialmente */
+    }
 
-        #login {
-            text-align: center;
-        }
+/* Centraliza o texto do placeholder */
+#login {
+    text-align: center; /* Centraliza o texto digitado no campo */
+}
 
-        #login::placeholder {
-            text-align: center;
-            color: #aaa;
-        }
+#login::placeholder {
+    text-align: center; /* Centraliza o texto do placeholder */
+    color: #aaa; /* Opcional: cor do placeholder */
+}
 
-        .small-input {
-            width: 300px;
-            background-color: transparent;
-            border: 1px solid #fff;
-            color: #ffffff;
-        }
+/* Centraliza o formulário de login */
+#loginForm {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Compensa o deslocamento */
+    text-align: center;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    background-color: transparent; /* Fundo transparente */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    height: 55vh; /* Ocupa 55% da altura da tela */
+}
 
-        #formContainer {
-            display: none;
-        }
-
-        .hidden-fields {
-            display: none;
-        }
-
-        .help.wide {
-            width: 200px;
-        }
-
-        #message {
-            margin: 20px;
-            font-weight: bold;
-            padding: 8px;
-            border-radius: 4px;
-        }
-    </style>
+    .small-input {
+        width: 300px; /* Largura do campo de login */
+        background-color: transparent; /* Fundo transparente para o input */
+        border: 1px solid #fff; /* Opcional: Adiciona borda para melhor visibilidade */
+        color: #ffffff; /* Define a cor do texto */
+    }
+	
+    .hidden-fields {
+      display: none;
+    }
+.help.wide {
+  width: 200px; /* Ajuste o valor conforme necessário */
+}
+</style>
 </head>
 <body>
     <!-- Formulário de Login -->
@@ -320,8 +316,11 @@
 <script>
 // Sistema de Login
 const validUsers = {
-  "light.falcaov": { nome: "Flare Falcao - 21813", ID: "<@1202276721257357419>" },
-  "seagal.falcaov": { nome: "Seagal Falcao - 48352", ID: "<@1234551482091831378>" },
+  "seagal.falcaov": { nome: "Seagal - 48352", ID: "<@1234551482091831378>" },
+  "login": { nome: "nome-rg", ID: "<@NA>" },
+  
+  
+  "caruzoofc": { nome: "Wellinton Jose - 25347", ID: "<@338052079249653782>" },
 };
 
 let loggedInUser = null; // Armazenar usuário logado
@@ -440,7 +439,7 @@ webhookData.append(
     materiais.length > 0
       ? "\n> " + materiais.map((material) => "-# " + material).join("\n> ")
       : ""
-  }\n-# ||**Passo ciência;**  <@&1317715184193638481>||`
+  }\n-# ||**Passo ciência;**  <@&1310469014123839519>||`
 );
 
       // Adiciona as imagens (se fornecidas) como anexos ao webhook
