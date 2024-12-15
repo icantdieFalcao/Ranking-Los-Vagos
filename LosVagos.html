@@ -68,18 +68,6 @@
             padding: 8px;
             border-radius: 4px;
         }
-
-        #admTag {
-    position: absolute;
-    top: 20px; /* Distância do topo */
-    right: 20px; /* Distância da direita */
-    background-color: #ffcc00; /* Cor de fundo */
-    color: #000; /* Cor do texto */
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
     </style>
 </head>
 <body>
@@ -335,44 +323,6 @@ const validUsers = {
   "light.falcaov": { nome: "Flare Falcao - 21813", ID: "<@1202276721257357419>" },
   "seagal.falcaov": { nome: "Seagal Falcao - 48352", ID: "<@1234551482091831378>" },
 };
-
-const validAdm = {
-            "admin": { nome: "Administrador", ID: "Admin" },
-            "user1": { nome: "Usuário 1", ID: "User1" }
-        };
-
-        document.getElementById("loginButton").addEventListener("click", function () {
-            const loginInput = document.getElementById("login").value.trim();
-            const user = validUsers[loginInput];
-
-            if (user) {
-                document.getElementById("loginForm").style.display = "none";
-                document.getElementById("formContainer").style.display = "block";
-                document.getElementById("nome").value = user.nome;
-            } else {
-                document.getElementById("loginErrorMessage").style.display = "block";
-            }
-        });
-
-        function showFields() {
-            const selectedCategories = Array.from(document.getElementById('categories').selectedOptions)
-                .map(option => option.value);
-            const allFields = document.querySelectorAll('.hidden-fields');
-
-            allFields.forEach(field => field.style.display = 'none');
-
-            selectedCategories.forEach(category => {
-                document.getElementById(`${category}-fields`).style.display = 'block';
-            });
-        }
-
-        // Envio de Formulário Simulado
-        document.getElementById("form").addEventListener("submit", function (e) {
-            e.preventDefault();
-            document.getElementById("message").textContent = "Formulário enviado com sucesso!";
-            document.getElementById("message").style.display = "block";
-            document.getElementById("message").style.backgroundColor = "#98FB98";
-        });
 
 let loggedInUser = null; // Armazenar usuário logado
 
