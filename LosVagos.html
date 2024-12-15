@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -71,6 +70,73 @@
     </style>
 </head>
 <body>
+    <!-- Formulário de Login -->
+    <div id="loginForm" class="box">
+        <h2 class="title has-text-white">Login</h2>
+        <div class="field">
+            <div class="control">
+                <input id="login" class="input small-input" type="text" placeholder="Usuário" />
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <input id="password" class="input small-input" type="password" placeholder="Senha" />
+            </div>
+        </div>
+        <div class="field">
+            <button id="submitBtn" class="button is-info">Entrar</button>
+        </div>
+        <div id="message" class="help is-danger"></div>
+    </div>
+
+    <!-- Formulário adicional escondido -->
+    <div id="formContainer">
+        <h3 class="title has-text-white">Formulário Adicional</h3>
+        <div class="field">
+            <label class="label has-text-white">Email:</label>
+            <div class="control">
+                <input class="input small-input" type="email" id="email" placeholder="Digite seu email" />
+            </div>
+        </div>
+        <div class="field hidden-fields">
+            <label class="label has-text-white">Código de Acesso:</label>
+            <div class="control">
+                <input class="input small-input" type="text" id="accessCode" placeholder="Código" />
+            </div>
+        </div>
+        <button id="nextBtn" class="button is-success">Próximo</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            const validUser = "admin";
+            const validPass = "1234";
+
+            // Ação do botão de login
+            $("#submitBtn").click(function () {
+                const user = $("#login").val();
+                const pass = $("#password").val();
+
+                if (user === validUser && pass === validPass) {
+                    $("#loginForm").fadeOut(500, function () {
+                        $("#formContainer").fadeIn(500);
+                    });
+                } else {
+                    $("#message").text("Usuário ou senha incorretos.").fadeIn();
+                }
+            });
+
+            // Ação do botão Próximo no formulário adicional
+            $("#nextBtn").click(function () {
+                const email = $("#email").val();
+                if (email) {
+                    alert("Formulário concluído com sucesso!");
+                } else {
+                    alert("Preencha o campo de email!");
+                }
+            });
+        });
+    </script>
     <!-- Formulário de Login -->
     <div id="loginForm" class="container m-4 pl-4">
       <label for="login"></label>
