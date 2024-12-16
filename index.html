@@ -2,110 +2,87 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Language" content="pt-BR">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="index">
-    <meta name="keywords" content="index">
-    <meta name="author" content="Wellinton Jose - 25347">
-    <title>Los Vagos</title>
-    <link rel="icon" href="https://imgur.com/itpAhfb.png" type="image/png">
-    <!-- CSS do Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: url('https://imgur.com/Hvf7BQF.png') no-repeat center center fixed;
-            background-size: cover;
-            color: #e0e0e0;
-        }
-
-.container-custom {
-    max-width: 100%;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.6);
-            margin: 0 10px;
-            border-radius: 30px;
-            text-align: center;
-            transition: background 0.3s;
-            color: #e0e0e0;
-        }
-
-        .tab:hover {
-            background: #ffff00;
-        }
-
-        .tab.active {
-            background: #ffff00;
-            color: #000;
-        }
-
-        .content {
-            display: none;
-            border-radius: 5px;
-            overflow: hidden;
-            height: calc(100% - 30px); /* Ajusta a altura do conteÃºdo */
-        }
-
-        .content.active {
-            display: block;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+    <title>a</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div class="container-custom">
-        <div class="tabs" role="tablist">
-            <div class="tab active" data-target="tab0" role="tab">Los Vagos</div>
+
+<!-- Formulário de Login -->
+<div id="loginForm" class="container">
+    <label for="login"></label>
+    <input
+        type="text"
+        id="login"
+        required
+        class="input small-input"
+        placeholder="Digite seu login"
+    />
+    <button id="loginButton" class="btn-enviar">Entrar</button>
+    <p id="loginErrorMessage" class="error-message" style="display: none;">Login inválido.</p>
+</div>
+
+<!-- Formulário Principal -->
+<div id="formContainer" class="container" style="display: none;">
+    <form id="form" method="POST">
+        <!-- Nome -->
+        <div class="field">
+            <label for="Nome" class="label">Nome</label>
+            <input type="text" id="nome" name="Nome" required readonly class="input">
         </div>
 
-        <div class="content active" id="tab0">
-            <iframe src="LosVagos.html" title="LosVagos"></iframe>
+        <!-- Categoria -->
+        <div class="field">
+            <label for="categories">Selecione as categorias</label>
+            <select id="categories" multiple size="5" onchange="showFields()">
+                <option value="ATM">ATM</option>
+                <option value="Lojinha">Lojinha</option>
+                <option value="Entorpecentes">Entorpecentes</option>
+                <option value="Desmanche">Desmanche</option>
+                <option value="Joalheira">Joalheira</option>
+                <option value="Corrida">Corrida</option>
+                <option value="Presenca">Presença em ação</option>
+                <option value="Missao">Missão Semanal</option>
+                <option value="Rotas">Rotas</option>
+            </select>
         </div>
-    </div>
 
-    <!-- Script do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Campos de categoria (Escondidos inicialmente) -->
+        <div id="ATM-fields" class="hidden-fields">
+            <label for="ATM-quantity">ATM</label>
+            <input type="number" name="ATM" min="0" class="input">
+        </div>
+        <div id="Lojinha-fields" class="hidden-fields">
+            <label for="Lojinha-quantity">Lojinha</label>
+            <input type="number" name="Lojinha" min="0" class="input">
+        </div>
+        <div id="Entorpecentes-fields" class="hidden-fields">
+            <label for="Entorpecentes-quantity">Entorpecentes</label>
+            <input type="number" name="Entorpecentes" min="0" class="input">
+        </div>
+        <!-- Outros campos ocultos seguem a mesma lógica -->
 
-    <script>
-        const tabs = document.querySelectorAll('.tab');
-        const contents = document.querySelectorAll('.content');
+        <!-- Imagem e Link -->
+        <div class="field">
+            <label for="imageUpload">Imagem</label>
+            <input type="file" id="imageUpload" name="Imagem" multiple accept="image/*">
+            <p class="help">Por favor, tenha cuidado com o tamanho da imagem.</p>
+        </div>
+        <div class="field">
+            <label for="Arquivo">Link</label>
+            <textarea name="Arquivo" rows="1" class="textarea" placeholder="Link das imagens aqui..."></textarea>
+            <p class="help">Faltou upar algumas imagens? Use o link.</p>
+        </div>
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                contents.forEach(c => c.classList.remove('active'));
+        <!-- Botão de Enviar -->
+        <button type="submit" id="submit-button" class="btn-enviar">Enviar</button>
 
-                tab.classList.add('active');
-                const target = document.getElementById(tab.getAttribute('data-target'));
-                if (target) target.classList.add('active');
-            });
-        });
-    </script>
+        <!-- Mensagem de confirmação -->
+        <div id="message" class="message" style="display: none;"></div>
+    </form>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
