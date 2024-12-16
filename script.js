@@ -177,7 +177,7 @@ const validUsers = {
   const webhookData = new FormData();
   webhookData.append(
     "content",
-    `<a:trofeu:1318291077886902322> **Registro de Pontuação <a:trofeu:1318291077886902322>**\n- **Nome:** *${Nome}*\n- **Discord:** *${loggedInUser}*\n- **Link:**\n> **${Arquivo ? Arquivo : ""}**\n- **Tarefa feito:** ${
+    `<a:trofeu:1318291077886902322> **Registro de Pontuação <a:trofeu:1318291077886902322>**\n- **Nome:** *${Nome}*\n- **Discord:** *${loggedInUser}*\n- **Link:**\n> **${Arquivo ? Arquivo : ""}**\n- **Tarefa completar:** ${
       materiais.length > 0
         ? "\n> " + materiais.map((material) => "" + material).join("\n> ")
         : ""
@@ -200,7 +200,7 @@ const validUsers = {
           throw new Error("Falha ao enviar. Possível que imagens são muito pesadas. Tente fazer o upload das imagens e utilizar o link.");
         }
   
-        messageElement.textContent = "Relatório da Facção enviado com sucesso! Obrigado pela sua contribuição.";
+        messageElement.textContent = "Registro de Pontuação enviado com sucesso! Obrigado pela sua contribuição.";
         messageElement.style.backgroundColor = "#98FB98";
         messageElement.style.color = "#000000";
         messageElement.style.display = "block";
