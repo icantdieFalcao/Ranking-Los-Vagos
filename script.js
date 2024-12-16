@@ -173,7 +173,7 @@ const validUsers = {
   
         // Preparando os dados para o webhook do Discord
         const webhookURL =
-          "https://discord.com/api/webhooks/1317710193949413466/YWZ_Cp08OOIApLI7kXQR-sxLEKiKeJ9hNUjOYwlZ1uDf9X8ZmNN0sEOmN38AV--UeYiU";
+          "https://discord.com/api/webhooks/1318303980727832728/aKlDpn6do_ntku2HND0iDhmqMLVJfT_pEzk1FL7c4ABeWb6GIefg7wmMX7Wy5uco61Ot";
   const webhookData = new FormData();
   webhookData.append(
     "content",
