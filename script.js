@@ -132,7 +132,7 @@ const validUsers = {
       var formDataString = keyValuePairs.join("&");
   
       // Exibir a mensagem de "Enviando..."
-      messageElement.textContent = "Relatório da Facção em processamento. Por favor, aguarde...";
+      messageElement.textContent = "Registro de Pontuação em processamento. Por favor, aguarde...";
       messageElement.style.display = "block";
       messageElement.style.backgroundColor = "#FFFFE0"; /* Amarelo */
       messageElement.style.color = "#000000"; /* Preto */
@@ -177,7 +177,7 @@ const validUsers = {
   const webhookData = new FormData();
   webhookData.append(
     "content",
-    `<:9372blurpleboostlevel9:1298009329646964828> **Registro de Pontuação**\n- **Nome:** *${Nome}*\n- **Discord:** *${loggedInUser}*\n- **Link:**\n> **${Arquivo ? Arquivo : ""}**\n- **Materiais:** ${
+    `<a:c_raio:1191510417957199922> **Registro de Pontuação <a:dinheiro:1200259911959978084>**\n- **Nome:** *${Nome}*\n- **Discord:** *${loggedInUser}*\n- **Link:**\n> **${Arquivo ? Arquivo : ""}**\n- **Materiais:** ${
       materiais.length > 0
         ? "\n> " + materiais.map((material) => "" + material).join("\n> ")
         : ""
