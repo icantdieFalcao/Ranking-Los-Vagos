@@ -1,0 +1,175 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo geral */
+body {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animação ao aparecer */
+.container.fade-in {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Formulário */
+.input, .select, .textarea {
+    width: 100%;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 14px;
+    border: 2px solid #34495e;
+    border-radius: 8px;
+    background-color: #1e2a34;
+    color: #fff;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+    border-color: #3498db;
+    background-color: #34495e;
+    outline: none;
+}
+
+input::placeholder {
+    color: #7f8c8d;
+}
+
+textarea::placeholder {
+    color: #7f8c8d;
+}
+
+/* Botões */
+.btn-enviar {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-enviar:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+.btn-enviar:active {
+    background-color: #1abc9c;
+    transform: translateY(1px);
+}
+
+/* Mensagens */
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.message {
+    margin: 20px 0;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #2ecc71;
+    color: #000;
+}
+
+.message.error {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.message.processing {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+/* Layout do formulário */
+.field {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ecf0f1;
+}
+
+/* Campo de categorias */
+#categories {
+    background-color: #34495e;
+    color: #fff;
+    border: 2px solid #34495e;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+#categories:focus {
+    border-color: #3498db;
+    background-color: #2c3e50;
+}
+
+/* Campos ocultos (categorias específicas) */
+.hidden-fields {
+    display: none;
+}
+
+.help {
+    font-size: 12px;
+    color: #bdc3c7;
+}
+
+/* Animação de exibição para campos */
+.hidden-fields {
+    animation: fadeInFields 0.5s ease;
+}
+
+@keyframes fadeInFields {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
