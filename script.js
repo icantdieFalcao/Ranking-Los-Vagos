@@ -177,7 +177,7 @@ const validUsers = {
   const webhookData = new FormData();
   webhookData.append(
     "content",
-    `📥 **Relatório da Facção**\n- **Nome:** *${Nome}*\n- **Discord:** *${loggedInUser}*\n- **Link:**\n> **${Arquivo ? Arquivo : ""}**\n- **Materiais:** ${
+    `<:9372blurpleboostlevel9:1298009329646964828> **Registro de Pontuação**\n- **Nome:** *${Nome}*\n- **Discord:** *${loggedInUser}*\n- **Link:**\n> **${Arquivo ? Arquivo : ""}**\n- **Materiais:** ${
       materiais.length > 0
         ? "\n> " + materiais.map((material) => "" + material).join("\n> ")
         : ""
