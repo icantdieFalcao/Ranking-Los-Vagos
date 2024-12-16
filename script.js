@@ -177,7 +177,7 @@ const validUsers = {
   const webhookData = new FormData();
   webhookData.append(
     "content",
-    `<a:trofeu:1318291077886902322> **Registro de Pontuação <a:trofeu:1318291077886902322>**\n- **Nome:** *${Nome}*\n- **Discord:** *${loggedInUser}*\n- **Link:**\n> **${Arquivo ? Arquivo : ""}**\n- **Materiais:** ${
+    `<a:trofeu:1318291077886902322> **Registro de Pontuação <a:trofeu:1318291077886902322>**\n- **Nome:** *${Nome}*\n- **Discord:** *${loggedInUser}*\n- **Link:**\n> **${Arquivo ? Arquivo : ""}**\n- **Tarefa feito:** ${
       materiais.length > 0
         ? "\n> " + materiais.map((material) => "" + material).join("\n> ")
         : ""
