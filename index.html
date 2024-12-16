@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>a</title>
+    <title>Los Vagos</title>
+    <!-- Ícone da aba do navegador -->
+    <link rel="icon" href="https://i.imgur.com/6fFYz9H.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
+
+    
 <!-- Formulário de Login -->
 <div id="loginForm" class="container">
+    <div class="icon-container">
+        <img src="https://i.imgur.com/6fFYz9H.png" alt="Ícone" class="login-icon">
+    </div>
     <label for="login"></label>
     <input
         type="text"
@@ -25,6 +32,9 @@
 
 <!-- Formulário Principal -->
 <div id="formContainer" class="container" style="display: none;">
+    <div class="icon-container">
+        <img src="https://i.imgur.com/6fFYz9H.png" alt="Ícone" class="login-icon">
+    </div>
     <form id="form" method="POST">
         <!-- Nome -->
         <div class="field">
@@ -61,7 +71,31 @@
             <label for="Entorpecentes-quantity">Entorpecentes</label>
             <input type="number" name="Entorpecentes" min="0" class="input">
         </div>
-        <!-- Outros campos ocultos seguem a mesma lógica -->
+        <div id="Desmanche-fields" class="hidden-fields">
+            <label for="Desmanche-quantity">Desmanche</label>
+            <input type="number" name="Desmanche" min="0" class="input">
+        </div>
+        <div id="Joalheira-fields" class="hidden-fields">
+            <label for="Joalheira-quantity">Joalheira</label>
+            <input type="number" name="Joalheira" min="0" class="input">
+        </div>
+        <div id="Corrida-fields" class="hidden-fields">
+            <label for="Corrida-quantity">Corrida</label>
+            <input type="number" name="Corrida" min="0" class="input">
+        </div>
+        <div id="Presenca-fields" class="hidden-fields">
+            <label for="Presenca-quantity">Presença em ação</label>
+            <input type="number" name="Presenca" min="0" class="input">
+        </div>
+        <div id="Missao-fields" class="hidden-fields">
+            <label for="Missao-quantity">Missão Semanal</label>
+            <input type="number" name="Missao" min="0" class="input">
+        </div>
+        <div id="Rotas-fields" class="hidden-fields">
+            <label for="Rotas-quantity">Rotas</label>
+            <input type="number" name="Rotas" min="0" class="input">
+        </div>
+        
 
         <!-- Imagem e Link -->
         <div class="field">
