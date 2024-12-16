@@ -181,7 +181,7 @@ const validUsers = {
       materiais.length > 0
         ? "\n> " + materiais.map((material) => "-# " + material).join("\n> ")
         : ""
-    }\n-# ||**Passo ciência;**  <@&1315073510028218440>||` 
+    }\n-# ||**Passo ciência;**  <@&1317715184193638481>||` 
   );
   
         // Adiciona as imagens (se fornecidas) como anexos ao webhook
